@@ -25,7 +25,7 @@ export default function CTA({
         </h1>
         <div className="text-md text-gray-700">{caption}</div>
       </div>
-      <div className="font-semibold text-xl p-4 border-t-2 border-gray-900 flex justify-between">
+      <div className="font-semibold text-xl p-4 border-t-2 border-gray-900 flex justify-between ">
         <Link href={ctaLink}>{cta}</Link>
         <Link href={ctaLink}>{ctaIcon}</Link>
       </div>
