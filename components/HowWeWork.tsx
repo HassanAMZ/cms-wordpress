@@ -12,7 +12,7 @@ export default function HowWeWork() {
     {
       image: "/favicon/favicon-32x32.png",
       imagaAlt: "Image",
-      heading: "Adding Value & Design",
+      heading: "Adding Value and Design",
       ctaLink: "/lets-talk",
     },
     {
