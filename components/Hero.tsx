@@ -26,14 +26,22 @@ export default function Hero() {
       ClientName: "Flourish Beauty Lab",
       ClientSiteLink: "https://flourishbeautylab.com/",
     },
+    {
+      ClientName: "Comrade",
+      ClientSiteLink: "https://cmrd.com/",
+    },
   ];
   return (
     <>
-      <section className="flex flex-col p-10 bg-no-repeat bg-cover bg-[#CAF1EE]">
-        <CTA {...data} />
+      <section className="flex flex-col p-10 bg-no-repeat bg-cover bg-blue-200">
+        <div className=" container mx-auto ">
+          <CTA {...data} />
+        </div>
       </section>
       <div className="bg-gray-900 text-gray-100">
-        <PreviousClients clients={clients} />
+        <div className=" container mx-auto ">
+          <PreviousClients clients={clients} />
+        </div>
       </div>
     </>
   );

@@ -9,10 +9,8 @@ export default function Layout({ children }) {
     <>
       <Meta />
       <NavBar />
-      <div className="min-h-screen">
-        <main className={m_PLUS_Rounded_1c.className}>{children}</main>
-      </div>
-      <Footer />
+      <main className={m_PLUS_Rounded_1c.className}>{children}</main>
+      {/* <Footer /> */}
     </>
   );
 }

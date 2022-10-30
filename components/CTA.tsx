@@ -12,7 +12,7 @@ export default function CTA({
   ctaIcon,
 }) {
   return (
-    <div className="w-[450px]  border-gray-900 border-2 bg-gray-100">
+    <div className="w-[450px] border-gray-900 border-2 bg-gray-100">
       <div className="font-semibold p-4 border-b-2 border-gray-900 flex justify-between">
         <div>{header}</div>
         <div>{headIcon}</div>

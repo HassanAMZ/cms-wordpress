@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NavBar() {
   return (
     <header className="border-b-2 border-gray-900 bg-gray-100 text-gray-900">
-      <nav className="flex justify-between font-semibold antialiased">
+      <nav className="flex container mx-auto justify-between font-semibold antialiased">
         <Link href="/" className="p-4">
           Shahzada Ali Hassan
         </Link>

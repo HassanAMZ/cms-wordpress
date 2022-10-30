@@ -7,7 +7,7 @@ export default function PreviousClients({ clients }) {
     <div className="flex justify-between p-10">
       {clients.map((client, index) => {
         return (
-          <div>
+          <div key={index}>
             <Link target="_blank" href={client.ClientSiteLink}>
               {client.ClientName}
             </Link>
