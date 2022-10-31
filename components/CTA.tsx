@@ -12,8 +12,8 @@ export default function CTA({
   ctaIcon,
 }) {
   return (
-    <div className="w-[450px] border-gray-900 border-2 bg-gray-100">
-      <div className="font-semibold p-4 border-b-2 border-gray-900 flex justify-between">
+    <div className="md:w-[450px] w-full border-gray-900 md:border-2 bg-gray-100">
+      <div className="font-semibold p-4 border-b-2 border-gray-900 md:flex hidden justify-between">
         <div>{header}</div>
         <div>{headIcon}</div>
       </div>
@@ -25,10 +25,12 @@ export default function CTA({
         </h1>
         <div className="text-md text-gray-700">{caption}</div>
       </div>
-      <div className="font-semibold text-xl p-4 border-t-2 border-gray-900 flex justify-between ">
-        <Link href={ctaLink}>{cta}</Link>
-        <Link href={ctaLink}>{ctaIcon}</Link>
-      </div>
+      <Link href={ctaLink}>
+        <div className="font-semibold text-xl p-4 border-t-2 border-gray-900 flex justify-between hover:bg-gray-100 hover:text-gray-900 bg-teal-100 text-gray-900">
+          <div>{cta}</div>
+          <div>{ctaIcon}</div>
+        </div>
+      </Link>
     </div>
   );
 }
