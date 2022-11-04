@@ -58,6 +58,30 @@ export async function getAllPostsWithSlug() {
   `);
   return data?.posts;
 }
+export async function getSingleBlog(slug) {
+  const data = await fetchAPI(`
+  {
+    post(id: "${slug}", idType: SLUG) {
+      title
+      postId
+      author {
+        node {
+          name
+        }
+      }
+      categories {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+      content(format: RENDERED)
+    }
+  }
+  `);
+  return data?.post;
+}
 
 export async function getAllPostsForHome() {
   const data = await fetchAPI(
@@ -136,6 +160,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
         edges {
           node {
             name
+            slug
           }
         }
       }
@@ -204,6 +229,69 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   data.posts.edges = data.posts.edges.filter(({ node }) => node.slug !== slug);
   // If there are still 3 posts, remove the last one
   if (data.posts.edges.length > 2) data.posts.edges.pop();
+
+  return data;
+}
+
+export async function GetAllBlogsForSingleCategory(slug) {
+  const data = await fetchAPI(
+    `
+    query GetAllBlogsForSingleCategory {
+      categories(where: {slug: "${slug}"}) {
+        nodes {
+          slug
+          name
+          posts {
+            nodes {
+              postId
+              slug
+              title
+              date
+              featuredImage {
+                node {
+                  sourceUrl
+                }
+              }
+              categories {
+                nodes {
+                  name
+                  slug
+                }
+              }
+              author {
+                node {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {},
+    }
+  );
+
+  return data;
+}
+export async function GetAllCategories() {
+  const data = await fetchAPI(
+    `
+    query GetAllCategories {
+      categories(first: 100) {
+        nodes {
+          slug
+          name
+        }
+      }
+    }
+  `,
+    {
+      variables: {},
+    }
+  );
 
   return data;
 }
