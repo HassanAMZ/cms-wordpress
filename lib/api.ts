@@ -280,10 +280,38 @@ export async function GetAllCategories() {
   const data = await fetchAPI(
     `
     query GetAllCategories {
-      categories(first: 100) {
+      categories(first: 1000) {
         nodes {
           slug
           name
+        }
+      }
+    }
+  `,
+    {
+      variables: {},
+    }
+  );
+
+  return data;
+}
+export async function GetAllPostAndCateogy() {
+  const data = await fetchAPI(
+    `
+    query GetAllPostAndCateogy {
+      posts(first: 1000) {
+        edges {
+          node {
+            title
+            excerpt
+            slug
+            date
+            categories {
+              nodes {
+                slug
+              }
+            }
+          }
         }
       }
     }

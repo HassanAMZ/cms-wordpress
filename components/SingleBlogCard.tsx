@@ -11,7 +11,6 @@ export default function SingleBlogCard({
   postDate,
   blogURL,
 }) {
-  // console.log(title, imageURL, slug, authorName, link, postDate);
   return (
     <div className="border-gray-900 md:border-2 bg-gray-100">
       <div className="font-semibold p-4 border-b-2 border-gray-900 md:flex hidden justify-between">
